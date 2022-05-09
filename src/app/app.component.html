@@ -1,11 +1,17 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
+ <!--  <img
     width="100"
     alt="Angular Logo"
     src="assets/img/AOM.png"
     onClick="location.href='https://church.mt'"
-  />
+  /> -->
+  <img
+  width="100"
+  alt="Angular Logo"
+  src="assets/img/AOM.png"
+  (click)="navigateToHome()"
+/>
   <span (click)="navigateTo()">Welcome</span>
   <div class="spacer"></div>
 </div>

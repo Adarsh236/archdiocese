@@ -11,7 +11,10 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
+  public navigateToHome() {
+    this.router.navigate(['']);
+  }
   public navigateTo() {
-    this.router.navigate(['/second-task']);
+    this.router.navigate(['second-task']);
   }
 }
