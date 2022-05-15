@@ -2,17 +2,48 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-second-task',
-  templateUrl: './second-task.component.html',
+  template: `<h4>NgFor</h4>
+    <ng-container *ngFor="let person of people; let i = index">
+      {{ i + 1 }} - {{ person.name }}
+    </ng-container>`,
   styleUrls: ['./second-task.component.css'],
 })
 export class SecondTaskComponent implements OnInit {
-  people = [
+  people: any[] = [
+    {
+      name: 'Douglas  Pace',
+    },
+    {
+      name: 'Mcleod  Mueller',
+    },
+    {
+      name: 'Day  Meyers',
+    },
+    {
+      name: 'Aguirre  Ellis',
+    },
+    {
+      name: 'Cook  Tyson',
+    },
+  ];
+
+  ngOnInit(): void {}
+  /*  people = [
     { name: 'jason', age: 63 },
     { name: 'michela', age: 8 },
     { name: 'kevin', age: 40 },
     { name: 'frances', age: 20 },
     { name: 'lilly', age: 13 },
   ];
+  people2 = [
+    { name: 'jason', age: 63 },
+    { name: 'michela', age: 8 },
+    { name: 'kevin', age: 40 },
+    { name: 'frances', age: 20 },
+    { name: 'lilly', age: 13 },
+  ];
+
+  youngerPeopleList;
 
   constructor() {}
 
@@ -28,8 +59,7 @@ export class SecondTaskComponent implements OnInit {
   }
 
   youngerPeople(): void {
-    const ff = this.people.filter((person) => person.age < 15);
-    console.log('youngerPeople', ff);
+    this.youngerPeopleList = this.people.filter((person) => person.age < 15);
   }
 
   adultPeople(): void {
@@ -89,5 +119,5 @@ export class SecondTaskComponent implements OnInit {
       });
     });
     console.log('logAgeName END');
-  }
+  } */
 }
