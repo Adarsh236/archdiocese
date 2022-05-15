@@ -10,5 +10,5 @@ $ npm install -g @angular/cli
 $ git clone https://github.com/Adarsh236/archdiocese.git archdiocese
 $ cd archdiocese
 $ npm i
-$ npm run start
+$ npm start
 ```
