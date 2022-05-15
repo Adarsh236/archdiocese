@@ -1,15 +1,37 @@
-<p>second-task works!</p>
+<h1>Second Task</h1>
 
+<p>Displays the names of those younger than 15 years</p>
 <ul>
-  <li *ngFor="let person of people2">{{ person }}</li>
+  <li *ngFor="let person of youngerPeopleList">{{ person.name }}</li>
+</ul>
 
-  <li *ngFor="let person of people2">
-    <span> {{ person.name }}</span>
+<p>Displays the ages of any adults</p>
+<ul>
+  <li *ngFor="let person of adultPeopleList">{{ person.age }}</li>
+</ul>
+
+<p>Displays the first name where age is < 60 & > 10</p>
+<ul>
+  <li>{{ ageRangeFirstPerson.name }}</li>
+</ul>
+
+<p>Displays a copy of the object array where the names are of length 5 only</p>
+<ul>
+  <li *ngFor="let person of copyArrayList">
+    {{ person.name }}, {{ person.age }}
   </li>
 </ul>
 
-<p>This is My First Component {{ people }}</p>
-
+<p>Displays a copy of the object array with the ages increased by 10 years</p>
 <ul>
-  <li *ngFor="let person of youngerPeopleList">{{ person.name }}</li>
+  <li *ngFor="let person of increaseAgeList">
+    {{ person.name }}, {{ person.age }}
+  </li>
+</ul>
+
+<p>Displays a copy of the object array with the all names capitalized</p>
+<ul>
+  <li *ngFor="let person of capitalizedNameList">
+    {{ person.name }}, {{ person.age }}
+  </li>
 </ul>

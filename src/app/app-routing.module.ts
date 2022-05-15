@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { FirstTaskComponent } from 'src/app/components/first-task/first-task.component';
-import { SecondTaskComponent } from 'src/app/components/second-task/second-task.component';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { FirstTaskComponent } from './components/first-task/first-task.component';
+import { SecondTaskComponent } from './components/second-task/second-task.component';
 
 const routes: Routes = [
   { path: '', component: FirstTaskComponent },
@@ -14,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

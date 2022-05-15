@@ -2,40 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-second-task',
-  template: `<h4>NgFor</h4>
-    <ng-container *ngFor="let person of people; let i = index">
-      {{ i + 1 }} - {{ person.name }}
-    </ng-container>`,
+  templateUrl: './second-task.component.html',
   styleUrls: ['./second-task.component.css'],
 })
 export class SecondTaskComponent implements OnInit {
-  people: any[] = [
-    {
-      name: 'Douglas  Pace',
-    },
-    {
-      name: 'Mcleod  Mueller',
-    },
-    {
-      name: 'Day  Meyers',
-    },
-    {
-      name: 'Aguirre  Ellis',
-    },
-    {
-      name: 'Cook  Tyson',
-    },
-  ];
-
-  ngOnInit(): void {}
-  /*  people = [
-    { name: 'jason', age: 63 },
-    { name: 'michela', age: 8 },
-    { name: 'kevin', age: 40 },
-    { name: 'frances', age: 20 },
-    { name: 'lilly', age: 13 },
-  ];
-  people2 = [
+  people = [
     { name: 'jason', age: 63 },
     { name: 'michela', age: 8 },
     { name: 'kevin', age: 40 },
@@ -44,6 +15,11 @@ export class SecondTaskComponent implements OnInit {
   ];
 
   youngerPeopleList;
+  adultPeopleList;
+  ageRangeFirstPerson;
+  copyArrayList;
+  increaseAgeList;
+  capitalizedNameList;
 
   constructor() {}
 
@@ -63,39 +39,37 @@ export class SecondTaskComponent implements OnInit {
   }
 
   adultPeople(): void {
-    const ff = this.people.filter((person) => person.age > 17);
-    console.log('adultPeople', ff);
+    this.adultPeopleList = this.people.filter((person) => person.age > 17);
   }
 
   ageRange(): void {
-    const ff = this.people.filter(
+    this.ageRangeFirstPerson = this.people.filter(
       (person) => person.age > 10 && person.age > 60
-    );
-    console.log('ageRange', ff);
+    )[0];
   }
 
   copyArray(): void {
-    const ff = this.people.filter((person) => person.name.length === 5);
-    console.log('copyArray', ff);
+    this.copyArrayList = this.people.filter(
+      (person) => person.name.length === 5
+    );
   }
 
   increaseAge(): void {
-    const ff = this.people.map((person) => ({
+    this.increaseAgeList = this.people.map((person) => ({
       name: person.name,
       age: person.age + 10,
     }));
-    console.log('increaseAge', ff);
   }
 
   capitalizedName(): void {
-    const ff = this.people.map((person) => ({
+    this.capitalizedNameList = this.people.map((person) => ({
       name: person.name.toLocaleUpperCase(),
       age: person.age,
     }));
-    console.log('capitalizedName', ff);
   }
 
   logNames(): void {
+    console.log('logNames START');
     console.log(
       '1st and 4th element names',
       this.people[0].name,
@@ -108,6 +82,7 @@ export class SecondTaskComponent implements OnInit {
       ' - ',
       this.people[4].name
     );
+    console.log('logNames END');
   }
 
   logAgeName(): void {
@@ -119,5 +94,5 @@ export class SecondTaskComponent implements OnInit {
       });
     });
     console.log('logAgeName END');
-  } */
+  }
 }
